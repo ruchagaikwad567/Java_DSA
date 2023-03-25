@@ -8,8 +8,10 @@ public class strque {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the string");
         String str=sc.next();
-        skip(str,"")
+        System.out.println(skip(str));
 ;    }
+
+    /*taking two arguments
     public static void skip(String up,String p)
     {
        if(up.isEmpty())
@@ -26,6 +28,22 @@ public class strque {
        else{
            skip(up.substring(1),p+ch);
        }
+    }*/
+    private static String skip(String up)
+    {
+        if(up.isEmpty())
+        {
+            return "";
+        }
+        char ch=up.charAt(0);
+        if(ch=='a')
+        {
+           return skip(up.substring((1)));
+        }
+        else{
+            return ch+skip(up.substring(1));
+        }
+
     }
 
 }
